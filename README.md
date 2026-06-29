@@ -132,8 +132,12 @@ The project was developed to demonstrate full-stack development skills, secure a
 
 ### Public Pages
 
-* Landing Page
-![Landing Page](screenshots/LandingPage.png)
+<h2 align="center">🏠 Landing Page</h2>
+
+<p align="center">
+  <img src="screenshots/LandingPage.png" alt="Landing Page" width="90%">
+</p>
+
 * Login
 * Register
 * Forgot Password
