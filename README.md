@@ -126,11 +126,12 @@ The project was developed to demonstrate full-stack development skills, secure a
 
 
 <!-- SECTION 5 -->
+
 ## 📸 Application Screenshots
 
-> **Note:** Screenshots will be added after completing the final UI polish.
+Below are some screenshots showcasing the application's user interface and key features.
 
-### Public Pages
+---
 
 <h2 align="center">🏠 Landing Page</h2>
 
@@ -138,43 +139,102 @@ The project was developed to demonstrate full-stack development skills, secure a
   <img src="screenshots/LandingPage.png" alt="Landing Page" width="90%">
 </p>
 
-* Login
-* Register
-* Forgot Password
-* Reset Password
+---
+
+<h2 align="center">🔐 Login</h2>
+
+<p align="center">
+  <img src="screenshots/LoginPage.png" alt="Login" width="90%">
+</p>
 
 ---
 
-### User Dashboard
+<h2 align="center">📝 Register</h2>
 
-* Dashboard
-* Profile
-* Change Password
-
----
-
-### Wallet Operations
-
-* Deposit Money
-* Withdraw Money
-* Transfer Money
-* Transaction History
-* Transaction Receipt
+<p align="center">
+  <img src="screenshots/RegisterPage.png" alt="Register" width="90%">
+</p>
 
 ---
 
-### Administration
+<h2 align="center">📊 Dashboard</h2>
 
-* Admin Dashboard
-* Manage Users
-* Manage Transactions
-* Audit Logs
+<p align="center">
+  <img src="screenshots/DashboardPage.png" alt="Dashboard" width="90%">
+</p>
 
 ---
 
-### API Documentation
+<h2 align="center">💰 Deposit</h2>
 
-* Swagger UI
+<p align="center">
+  <img src="screenshots/DepositPage.png" alt="Deposit" width="90%">
+</p>
+
+---
+
+<h2 align="center">💸 Withdraw</h2>
+
+<p align="center">
+  <img src="screenshots/WithdrawPage.png" alt="Withdraw" width="90%">
+</p>
+
+---
+
+<h2 align="center">🔄 Transfer</h2>
+
+<p align="center">
+  <img src="screenshots/TransferPage.png" alt="Transfer" width="90%">
+</p>
+
+---
+
+<h2 align="center">📜 Transaction History</h2>
+
+<p align="center">
+  <img src="screenshots/HistoryPage.png" alt="Transaction History" width="90%">
+</p>
+
+---
+
+<h2 align="center">👨‍💼 Admin Dashboard</h2>
+
+<p align="center">
+  <img src="screenshots/AdminDashboardPage.png" alt="Admin Dashboard" width="90%">
+</p>
+
+---
+
+<h2 align="center">👥 Manage Users</h2>
+
+<p align="center">
+  <img src="screenshots/AdminUsersPage.png" alt="Manage Users" width="90%">
+</p>
+
+---
+
+<h2 align="center">💳 Manage Transactions</h2>
+
+<p align="center">
+  <img src="screenshots/AdminTransactionsPage.png" alt="Manage Transactions" width="90%">
+</p>
+
+---
+
+<h2 align="center">📝 Audit Logs</h2>
+
+<p align="center">
+  <img src="screenshots/AdminAuditLogsPage.png" alt="Audit Logs" width="90%">
+</p>
+
+---
+
+<h2 align="center">📚 Swagger API Documentation</h2>
+
+<p align="center">
+  <img src="screenshots/SwaggerPage.png" alt="Swagger Documentation" width="90%">
+</p>
+
 
 
 <!-- SECTION 6 -->
