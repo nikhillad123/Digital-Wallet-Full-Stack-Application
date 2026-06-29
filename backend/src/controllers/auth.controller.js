@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 async function registerUser(req, res) {
     let session;
 
-    try { 
+    try {
 
         // Extract name, email, and password from the request body
         const { name, password } = req.body;
@@ -65,7 +65,7 @@ async function registerUser(req, res) {
             name: user[0].name
         });
     } catch (error) {
-        
+
         if (session) {
             await session.abortTransaction();
             session.endSession();
@@ -114,33 +114,38 @@ async function loginUser(req, res) {
         }
 
         // 6. Invalidate all previous refresh tokens 
-        await refreshTokenModel.deleteMany({ 
+        await refreshTokenModel.deleteMany({
             user: user._id
         });
-        
+
         // Access Token (short-lived) 
-        const accessToken = jwt.sign( { 
+        const accessToken = jwt.sign({
             userId: user._id
-        }, process.env.JWT_SECRET, { expiresIn: "15m" } ); 
-        
+        }, process.env.JWT_SECRET, { expiresIn: "15m" });
+
         // Refresh Token (long-lived) 
-        const refreshToken = jwt.sign( { 
-            userId: user._id 
-        }, process.env.JWT_REFRESH_SECRET, { expiresIn: "7d" } ); 
-        
+        const refreshToken = jwt.sign({
+            userId: user._id
+        }, process.env.JWT_REFRESH_SECRET, { expiresIn: "7d" });
+
         // Store refresh token in DB 
-        await refreshTokenModel.create({ 
-            user: user._id, 
-            token: refreshToken, 
-            expiresAt: new Date( Date.now() + 7 * 24 * 60 * 60 * 1000 ) }); 
-            
+        await refreshTokenModel.create({
+            user: user._id,
+            token: refreshToken,
+            expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+        });
+
         // 6. Send cookies 
-        res.cookie("accessToken", accessToken, { 
-            httpOnly: true 
-        }); 
-        
-        res.cookie("refreshToken", refreshToken, { 
-            httpOnly: true 
+        res.cookie("accessToken", accessToken, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax"
+        });
+
+        res.cookie("refreshToken", refreshToken, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax"
         });
 
         // 7. Send a successful login response with user details and the token
@@ -166,7 +171,7 @@ async function loginUser(req, res) {
 
 async function refreshAccessToken(req, res) {
     try {
-        
+
         // 1. Get refresh token from cookie
         const refreshToken = req.cookies.refreshToken;
 
@@ -238,11 +243,15 @@ async function refreshAccessToken(req, res) {
 
         // 9. Send new cookies
         res.cookie("accessToken", accessToken, {
-            httpOnly: true
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax"
         });
 
         res.cookie("refreshToken", newRefreshToken, {
-            httpOnly: true
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax"
         });
 
         return res.status(200).json({
@@ -269,8 +278,17 @@ async function logoutUser(req, res) {
             });
         }
 
-        res.clearCookie("accessToken");
-        res.clearCookie("refreshToken");
+        res.clearCookie("accessToken", {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax",
+        });
+
+        res.clearCookie("refreshToken", {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax",
+        });
 
         return res.status(200).json({
             success: true,
