@@ -160,7 +160,7 @@ Below are some screenshots showcasing the application's user interface and key f
 <h2 align="center">📊 Dashboard</h2>
 
 <p align="center">
-  <img src="screenshots/DashboardPage.png" alt="Dashboard" width="90%">
+  <img src="screenshots/DashboardPage2.png" alt="Dashboard" width="90%">
 </p>
 
 ---
