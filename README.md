@@ -133,7 +133,7 @@ The project was developed to demonstrate full-stack development skills, secure a
 ### Public Pages
 
 * Landing Page
-![Landing Page](screenshots/landing-page.png)
+![Landing Page](screenshots/LandingPage.png)
 * Login
 * Register
 * Forgot Password
