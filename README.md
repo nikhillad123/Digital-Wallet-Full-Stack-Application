@@ -133,6 +133,7 @@ The project was developed to demonstrate full-stack development skills, secure a
 ### Public Pages
 
 * Landing Page
+![Landing Page](screenshots/landing-page.png)
 * Login
 * Register
 * Forgot Password
@@ -400,6 +401,6 @@ https://digital-wallet-backend-z636.onrender.com/api-docs
 
 **Nikhil Lad**
 
-Second-Year Mechanical Engineering Student | Aspiring Full-Stack Developer
+Final-Year Mechanical Engineering Student | Aspiring Full-Stack Developer
 
 This project was developed to strengthen my understanding of full-stack web development, secure authentication, RESTful API design, database management, and production deployment. It represents my effort to build a real-world application by following modern software engineering practices.
