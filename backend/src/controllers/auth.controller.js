@@ -121,7 +121,7 @@ async function loginUser(req, res) {
         // Access Token (short-lived) 
         const accessToken = jwt.sign({
             userId: user._id
-        }, process.env.JWT_SECRET, { expiresIn: "15m" });
+        }, process.env.JWT_SECRET, { expiresIn: "30m" });
 
         // Refresh Token (long-lived) 
         const refreshToken = jwt.sign({
@@ -139,13 +139,13 @@ async function loginUser(req, res) {
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "lax"
+            sameSite: "none"
         });
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "lax"
+            sameSite: "none"
         });
 
         // 7. Send a successful login response with user details and the token
@@ -212,7 +212,7 @@ async function refreshAccessToken(req, res) {
             },
             process.env.JWT_SECRET,
             {
-                expiresIn: "15m"
+                expiresIn: "30m"
             }
         );
 
@@ -245,13 +245,13 @@ async function refreshAccessToken(req, res) {
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "lax"
+            sameSite: "none"
         });
 
         res.cookie("refreshToken", newRefreshToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "lax"
+            sameSite: "none"
         });
 
         return res.status(200).json({
@@ -281,13 +281,13 @@ async function logoutUser(req, res) {
         res.clearCookie("accessToken", {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "lax",
+            sameSite: "none",
         });
 
         res.clearCookie("refreshToken", {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "lax",
+            sameSite: "none",
         });
 
         return res.status(200).json({
