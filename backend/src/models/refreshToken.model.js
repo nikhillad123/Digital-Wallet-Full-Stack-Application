@@ -1,0 +1,41 @@
+const mongoose = require("mongoose");
+
+const refreshTokenSchema = new mongoose.Schema(
+    {
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "user",
+            required: true,
+            index: true
+        },
+
+        token: {
+            type: String,
+            required: true,
+            unique: true
+        },
+
+        expiresAt: {
+            type: Date,
+            required: true
+        },
+
+        isRevoked: {
+            type: Boolean,
+            default: false
+        }
+    },
+    {
+        timestamps: true
+    }
+);
+
+// Automatically delete expired refresh tokens
+refreshTokenSchema.index(
+    { expiresAt: 1 },
+    { expireAfterSeconds: 0 }
+);
+
+const refreshTokenModel = mongoose.model("refreshToken", refreshTokenSchema);
+
+module.exports = refreshTokenModel;

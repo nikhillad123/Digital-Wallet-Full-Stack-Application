@@ -1,0 +1,215 @@
+.admin-users-layout {
+    display: flex;
+    min-height: 100vh;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+.admin-users-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.admin-users-header {
+    margin-bottom: 32px;
+}
+
+.admin-users-header h1 {
+    margin: 0;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.admin-users-header p {
+    margin-top: 8px;
+
+    color: var(--muted);
+}
+
+.admin-users-loading {
+    color: var(--muted);
+
+    font-size: 18px;
+}
+
+.admin-users-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.admin-users-table thead {
+    background: var(--surface-2);
+}
+
+.admin-users-table th {
+    padding: 16px;
+
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--muted);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.admin-users-table td {
+    padding: 18px 16px;
+
+    border-bottom: 1px solid var(--border);
+
+    vertical-align: middle;
+}
+
+.admin-users-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-users-table tbody tr:hover {
+    background: rgba(255,255,255,0.02);
+}
+
+.role-admin,
+.role-user,
+.status-active,
+.status-frozen {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 72px;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.role-admin {
+    background: rgba(52,211,153,0.12);
+    color: var(--primary);
+}
+
+.role-user {
+    background: rgba(132,146,166,0.12);
+    color: var(--muted);
+}
+
+.status-active {
+    background: rgba(52,211,153,0.12);
+    color: var(--primary);
+}
+
+.status-frozen {
+    background: rgba(242,102,122,0.12);
+    color: var(--danger);
+}
+
+.freeze-btn,
+.unfreeze-btn {
+    border: none;
+
+    padding: 8px 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.freeze-btn {
+    background: rgba(242,102,122,.12);
+    color: var(--danger);
+}
+
+.freeze-btn:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.unfreeze-btn {
+    background: rgba(52,211,153,.12);
+    color: var(--primary);
+}
+
+.unfreeze-btn:hover {
+    background: var(--primary);
+    color: #06281f;
+}
+
+.self-admin {
+    color: var(--muted);
+
+    font-size: 20px;
+}
+
+.admin-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 24px;
+}
+
+.admin-pagination button {
+    background: var(--surface);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.admin-pagination button:hover:not(:disabled) {
+    border-color: var(--primary);
+
+    color: var(--primary);
+}
+
+.admin-pagination button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.admin-pagination span {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+
+    .admin-users-content {
+        padding: 24px;
+    }
+
+    .admin-users-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+}

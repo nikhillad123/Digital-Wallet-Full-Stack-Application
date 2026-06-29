@@ -1,0 +1,98 @@
+.withdraw-page {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+}
+
+.withdraw-main {
+    flex: 1;
+    padding: 32px;
+}
+
+.withdraw-main h1 {
+    margin-bottom: 8px;
+}
+
+.withdraw-main > p {
+    color: var(--muted);
+    margin-bottom: 24px;
+}
+
+.withdraw-panel {
+    margin-top: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 500px;
+}
+
+.withdraw-panel h2 {
+    margin-bottom: 20px;
+}
+
+.withdraw-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.withdraw-panel input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 15px;
+}
+
+.withdraw-panel input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.withdraw-panel input::placeholder {
+    color: var(--muted);
+}
+
+.withdraw-panel button {
+    width: fit-content;
+}
+
+.error-message {
+    color: var(--danger);
+    font-size: 14px;
+}
+
+.success-message {
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.primary-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.primary-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .withdraw-page {
+        flex-direction: column;
+    }
+
+    .withdraw-main {
+        padding: 20px;
+    }
+
+    .withdraw-panel {
+        max-width: 100%;
+    }
+}

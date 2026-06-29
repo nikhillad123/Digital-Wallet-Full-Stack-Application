@@ -1,0 +1,172 @@
+.history-page {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+}
+
+.history-main {
+    flex: 1;
+    padding: 32px;
+}
+
+.history-main h1 {
+    margin-bottom: 8px;
+}
+
+.history-main>p {
+    color: var(--muted);
+    margin-bottom: 24px;
+}
+
+.filter-panel,
+.history-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.filter-panel h2,
+.history-panel h2 {
+    margin-bottom: 20px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.filter-grid input,
+.filter-grid select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+}
+
+.filter-grid input:focus,
+.filter-grid select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.filter-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.history-panel table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-panel th,
+.history-panel td {
+    text-align: left;
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.history-panel th {
+    color: var(--muted);
+}
+
+.type-badge,
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.credit {
+    background: rgba(52, 211, 153, 0.15);
+    color: var(--primary);
+}
+
+.debit {
+    background: rgba(242, 102, 122, 0.15);
+    color: var(--danger);
+}
+
+.success {
+    background: rgba(52, 211, 153, 0.15);
+    color: var(--primary);
+}
+
+.failed {
+    background: rgba(242, 102, 122, 0.15);
+    color: var(--danger);
+}
+
+.pending {
+    background: rgba(245, 165, 36, 0.15);
+    color: var(--warning);
+}
+
+.amount-credit {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.amount-debit {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.pagination button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: var(--danger);
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+
+    .history-page {
+        flex-direction: column;
+    }
+
+    .history-main {
+        padding: 20px;
+    }
+
+    .history-panel {
+        overflow-x: auto;
+    }
+
+}

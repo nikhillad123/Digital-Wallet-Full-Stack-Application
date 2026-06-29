@@ -1,0 +1,18 @@
+:root {
+  --background: #0b1220;
+
+  --surface: #101a2c;
+  --surface-2: #16223a;
+
+  --border: #243149;
+
+  --primary: #34d399;
+
+  --text: #e8ecf3;
+  --muted: #8492a6;
+  --faint: #56657f;
+
+  --danger: #f2667a;
+
+  --warning: #f5a524;
+}

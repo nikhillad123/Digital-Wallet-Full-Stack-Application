@@ -1,0 +1,273 @@
+.admin-transactions-layout {
+    display: flex;
+    min-height: 100vh;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+.admin-transactions-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.admin-transactions-header {
+    margin-bottom: 32px;
+}
+
+.admin-transactions-header h1 {
+    margin: 0;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.admin-transactions-header p {
+    margin-top: 8px;
+
+    color: var(--muted);
+}
+
+.admin-transactions-loading {
+    color: var(--muted);
+
+    font-size: 18px;
+}
+
+/* ===========================
+   FILTERS
+=========================== */
+
+.transaction-filters {
+    display: flex;
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+.transaction-filters select {
+    min-width: 180px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.transaction-filters select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.admin-transactions-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.admin-transactions-table thead {
+    background: var(--surface-2);
+}
+
+.admin-transactions-table th {
+    padding: 16px;
+
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--muted);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.admin-transactions-table td {
+    padding: 18px 16px;
+
+    border-bottom: 1px solid var(--border);
+
+    vertical-align: middle;
+}
+
+.admin-transactions-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-transactions-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* ===========================
+   TYPE BADGES
+=========================== */
+
+.type-credit,
+.type-debit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 82px;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.type-credit {
+    background: rgba(52, 211, 153, .12);
+    color: var(--primary);
+}
+
+.type-debit {
+    background: rgba(242, 102, 122, .12);
+    color: var(--danger);
+}
+
+/* ===========================
+   STATUS BADGES
+=========================== */
+
+.status-success,
+.status-pending,
+.status-failed,
+.status-reversed {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 90px;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-success {
+    background: rgba(52, 211, 153, .12);
+    color: var(--primary);
+}
+
+.status-pending {
+    background: rgba(245, 165, 36, .12);
+    color: #f5a524;
+}
+
+.status-failed {
+    background: rgba(242, 102, 122, .12);
+    color: var(--danger);
+}
+
+.status-reversed {
+    background: rgba(132, 146, 166, .12);
+    color: var(--muted);
+}
+
+/* ===========================
+   AMOUNT
+=========================== */
+
+.transaction-amount {
+    font-weight: 600;
+
+    font-family: monospace;
+}
+
+/* ===========================
+   PAGINATION
+=========================== */
+
+.admin-transactions-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 24px;
+}
+
+.admin-transactions-pagination button {
+    background: var(--surface);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.admin-transactions-pagination button:hover:not(:disabled) {
+    border-color: var(--primary);
+
+    color: var(--primary);
+}
+
+.admin-transactions-pagination button:disabled {
+    opacity: .45;
+
+    cursor: not-allowed;
+}
+
+.admin-transactions-pagination span {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 900px) {
+
+    .admin-transactions-content {
+        padding: 24px;
+    }
+
+    .transaction-filters {
+        flex-direction: column;
+    }
+
+    .transaction-filters select {
+        width: 100%;
+    }
+
+    .admin-transactions-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+}

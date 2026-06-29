@@ -1,0 +1,99 @@
+.deposit-page {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+}
+
+.deposit-main {
+    flex: 1;
+    padding: 32px;
+}
+
+.deposit-main h1 {
+    margin-bottom: 8px;
+}
+
+.deposit-main>p {
+    color: var(--muted);
+    margin-bottom: 24px;
+}
+
+.deposit-panel {
+    margin-top: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 500px;
+}
+
+.deposit-panel h2 {
+    margin-bottom: 20px;
+}
+
+.deposit-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.deposit-panel input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 15px;
+}
+
+.deposit-panel input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.deposit-panel input::placeholder {
+    color: var(--muted);
+}
+
+.deposit-panel button {
+    width: fit-content;
+}
+
+.error-message {
+    color: var(--danger);
+    font-size: 14px;
+}
+
+.success-message {
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.primary-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.primary-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .deposit-page {
+        flex-direction: column;
+    }
+
+    .deposit-main {
+        padding: 20px;
+    }
+
+    .deposit-panel {
+        max-width: 100%;
+    }
+
+}

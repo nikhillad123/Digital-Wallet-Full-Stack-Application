@@ -1,0 +1,106 @@
+.transfer-page {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+}
+
+.transfer-main {
+    flex: 1;
+    padding: 32px;
+}
+
+.transfer-main h1 {
+    margin-bottom: 8px;
+}
+
+.transfer-main>p {
+    color: var(--muted);
+    margin-bottom: 24px;
+}
+
+.transfer-panel {
+    margin-top: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 500px;
+}
+
+.transfer-panel h2 {
+    margin-bottom: 20px;
+}
+
+.transfer-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.transfer-panel input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 15px;
+}
+
+.transfer-panel input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.transfer-panel input::placeholder {
+    color: var(--muted);
+}
+
+.transfer-panel button {
+    width: fit-content;
+}
+
+.helper-text {
+    margin-top: -10px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.error-message {
+    color: var(--danger);
+    font-size: 14px;
+}
+
+.success-message {
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.primary-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.primary-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+
+    .transfer-page {
+        flex-direction: column;
+    }
+
+    .transfer-main {
+        padding: 20px;
+    }
+
+    .transfer-panel {
+        max-width: 100%;
+    }
+
+}

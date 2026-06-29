@@ -1,0 +1,164 @@
+.profile-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 240px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    margin-bottom: 40px;
+}
+
+.profile-logo {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+
+    color: black;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+
+    color: var(--muted);
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.sidebar-nav a:hover {
+    background: var(--surface-2);
+    color: var(--text);
+}
+
+.sidebar-nav a.active {
+    background: var(--surface-2);
+    color: var(--text);
+}
+
+/* MAIN */
+
+.profile-main {
+    flex: 1;
+
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-header h1 {
+    margin-bottom: 8px;
+}
+
+.profile-header p {
+    color: var(--muted);
+}
+
+/* CARD */
+
+.profile-card {
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 24px;
+}
+
+.profile-card h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* ROWS */
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row span {
+    color: var(--muted);
+}
+
+.money {
+    color: var(--primary);
+}
+
+/* BUTTONS */
+
+.primary-btn,
+.danger-btn {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: black;
+}
+
+.danger-btn {
+    background: var(--danger);
+    color: white;
+}
+
+.error-card {
+    color: var(--danger);
+}
